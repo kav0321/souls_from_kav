@@ -19,11 +19,11 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.chunk.WorldChunk;
 
-public class ServerStart implements ServerPlayConnectionEvents.Join{
+public class ServerStart implements ServerLifecycleEvents.SyncDataPackContents{
 
 
     @Override
-    public void onPlayReady(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server) {
-      //  SoulData.synSoul(((IEntityDataSaver) player).getPersistentData().getInt("soul"), player);
+    public void onSyncDataPackContents(ServerPlayerEntity player, boolean joined) {
+
     }
 }

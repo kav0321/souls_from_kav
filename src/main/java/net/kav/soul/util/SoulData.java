@@ -36,6 +36,7 @@ public class SoulData {
                     soul = soul + amount;
                 }
                 nbt.putInt("soul", soul);
+               // synSoul(soul, (ServerPlayerEntity) player);
                 return soul;
             case "Intimidation_factor" :
                 if (Intimidation_factor >= 100) {
@@ -77,6 +78,7 @@ public class SoulData {
                     soul = soul - amount;
                 }
                 nbt.putInt("soul", soul);
+               //synSoul(soul, (ServerPlayerEntity) player);
                 return soul;
             case "Intimidation_factor" :
                 if (Intimidation_factor <0) {
@@ -100,6 +102,13 @@ public class SoulData {
         }
     }
 
+    public static int getSoul(IEntityDataSaver player)
+    {
+        NbtCompound nbt = player.getPersistentData();
+        soul=nbt.getInt("soul");
+        nbt.putInt("soul", soul);
+        return soul;
+    }
 
    // public static int addsoul(IEntityDataSaver player, int amount) {
     //        NbtCompound nbt = player.getPersistentData();
@@ -134,7 +143,7 @@ public class SoulData {
     {
         PacketByteBuf buffer = PacketByteBufs.create();
         buffer.writeInt(soul);
-       ServerPlayNetworking.send(player, ModMessages.Soul_ID, buffer);
+       ServerPlayNetworking.send(player, ModMessages.EXAMPLE_ID, buffer);
     }
 
 

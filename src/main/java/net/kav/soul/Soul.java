@@ -26,9 +26,9 @@ public class Soul implements ModInitializer {
 	   ModMessages.registerC2SPackets();
 
 
-		//ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register(new EntityDeath());
+		ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register(new EntityDeath());
 		ServerPlayerEvents.AFTER_RESPAWN.register(new PlayerDeath());
-		ServerPlayConnectionEvents.JOIN.register(new ServerStart());
+		//ServerPlayConnectionEvents.JOIN.register(new ServerStart());
 
 
 

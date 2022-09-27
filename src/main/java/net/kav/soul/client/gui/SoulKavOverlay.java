@@ -13,6 +13,8 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.kav.soul.Soul;
 
+import net.kav.soul.util.GlobalSoul;
+import net.kav.soul.util.IEntityDataSaver;
 import net.kav.soul.util.SoulData;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -78,24 +80,24 @@ public class SoulKavOverlay implements HudRenderCallback{
         DrawableHelper.drawTexture(matrixStack,x+135,y-15,0,0,12,12,12,12,12);
 
 
-      //  //ClientPlayNetworking.send(ModMessages.EXAMPLE_ID, PacketByteBufs.create());
-        //        if(SoulglobalData.getsouls()>=1000)
-        //        {
-        //            DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(SoulglobalData.getsouls()), x + 181, y - 12, color.getArgb());
-        //        }
-        //        else if(SoulglobalData.getsouls()>=10000){
-        //            DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(SoulglobalData.getsouls()), x + 177, y - 12, color.getArgb());
-        //        }
-        //        else if(SoulglobalData.getsouls()>=100000)
-        //        {
-        //            DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(SoulglobalData.getsouls()), x + 173, y - 12, color.getArgb());
-        //        }
-        //        else if(SoulglobalData.getsouls()>=1000000)
-        //        {
-        //            DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(SoulglobalData.getsouls()), x + 169, y - 12, color.getArgb());
-        //        }
-        //        else
-        //            DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(SoulglobalData.getsouls()), x + 185, y - 12, color.getArgb());
+
+               if(GlobalSoul.getGlobalSoul() >=1000)
+               {
+                    DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(GlobalSoul.getGlobalSoul()), x + 181, y - 12, color.getArgb());
+                }
+               else if(GlobalSoul.getGlobalSoul()>=10000){
+                    DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(GlobalSoul.getGlobalSoul()), x + 177, y - 12, color.getArgb());
+               }
+              else if(GlobalSoul.getGlobalSoul()>=100000)
+               {
+                  DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(GlobalSoul.getGlobalSoul()), x + 173, y - 12, color.getArgb());
+                }
+               else if(GlobalSoul.getGlobalSoul()>=1000000)
+              {
+                    DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(GlobalSoul.getGlobalSoul()), x + 169, y - 12, color.getArgb());
+               }
+               else
+                   DrawableHelper.drawCenteredText(matrixStack, MinecraftClient.getInstance().textRenderer, Integer.toString(GlobalSoul.getGlobalSoul()), x + 185, y - 12, color.getArgb());
 
 
 

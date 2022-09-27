@@ -1,6 +1,7 @@
 package net.kav.soul.networking.packet;
 
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.kav.soul.util.IEntityDataSaver;
 import net.kav.soul.util.SoulData;
 import net.minecraft.entity.LivingEntity;

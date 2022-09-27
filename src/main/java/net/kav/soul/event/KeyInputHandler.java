@@ -28,7 +28,7 @@ if(gainingkey.wasPressed()) {
 
    //MinecraftClient.getInstance().setScreen(new Huds((new examplegui())));
 
-    ClientPlayNetworking.send(ModMessages.PLAYER_SOUL, PacketByteBufs.create());
+    //ClientPlayNetworking.send(ModMessages.PLAYER_SOUL, PacketByteBufs.create());
             }
         });
     }
